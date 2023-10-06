@@ -4,7 +4,7 @@ from point import Point
 
 class Cell:
 
-    def __init__(self, x1, x2, y1, y2, window):
+    def __init__(self, x1: int, x2: int, y1: int, y2: int, window):
         self._x1 = x1
         self._x2 = x2
         self._y1 = y1
@@ -14,7 +14,7 @@ class Cell:
         self.has_right_wall = True
         self.has_top_wall = True
         self.has_bottom_wall = True
-        self.mid_point = Point( int((x1 + x2) / 2), int((y1 + y2) / 2))
+        self.mid_point = Point(int((x1 + x2) / 2), int((y1 + y2) / 2))
 
     def draw(self):
         if self.has_left_wall:
@@ -55,8 +55,8 @@ class Cell:
             self.has_bottom_wall = True
 
     def center(self):
-        mid_x = self._x1 + self._x2 / 2
-        mid_y = self._y1 + self._y2 / 2
+        mid_x = (self._x1 + self._x2) / 2
+        mid_y = (self._y1 + self._y2) / 2
         return Point(mid_x, mid_y)
 
     def draw_move(self, to_cell, undo=False):
