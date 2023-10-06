@@ -1,13 +1,14 @@
-from point import Point
-from line import Line
 from window import Window
+from cell import Cell
 
 
 def main():
     win = Window(800, 600)
-    p1, p2 = Point(50, 100), Point(0, 600)
-    line = Line(p1, p2)
-    win.draw_line(line, "red")
+    cell1 = Cell(200, 300, 200, 300, win)
+    cell2 = Cell(400, 500, 400, 500, win)
+    cell1.draw()
+    cell2.draw()
+    cell1.draw_move(cell2, True)
     win.wait_for_close()
 
 
