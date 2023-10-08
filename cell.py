@@ -18,17 +18,32 @@ class Cell:
 
     def draw(self):
         if self.has_left_wall:
-            line = Line(Point(self._x1, self._y1), Point(self._x1, self._y2))
-            self._window.draw_line(line, "black")
+            self._window.draw_line(Line(Point(self._x1, self._y1),
+                                        Point(self._x1, self._y2)), "black")
+        else:
+            self._window.draw_line(Line(Point(self._x1, self._y1),
+                                        Point(self._x1, self._y2)), "white")
+
         if self.has_right_wall:
-            line = Line(Point(self._x2, self._y1), Point(self._x2, self._y2))
-            self._window.draw_line(line, "black")
+            self._window.draw_line(Line(Point(self._x2, self._y1),
+                                        Point(self._x2, self._y2)), "black")
+        else:
+            self._window.draw_line(Line(Point(self._x2, self._y1),
+                                        Point(self._x2, self._y2)), "white")
+
         if self.has_bottom_wall:
-            line = Line(Point(self._x1, self._y2), Point(self._x2, self._y2))
-            self._window.draw_line(line, "black")
+            self._window.draw_line(Line(Point(self._x1, self._y2),
+                                        Point(self._x2, self._y2)), "black")
+        else:
+            self._window.draw_line(Line(Point(self._x1, self._y2),
+                                        Point(self._x2, self._y2)), "white")
+
         if self.has_top_wall:
-            line = Line(Point(self._x1, self._y1), Point(self._x2, self._y1))
-            self._window.draw_line(line, "black")
+            self._window.draw_line(Line(Point(self._x1, self._y1),
+                                        Point(self._x2, self._y1)), "black")
+        else:
+            self._window.draw_line(Line(Point(self._x1, self._y1),
+                                        Point(self._x2, self._y1)), "white")
 
     def switch_left(self):
         if self.has_left_wall:
