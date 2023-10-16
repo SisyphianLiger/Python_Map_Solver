@@ -14,6 +14,7 @@ class Cell:
         self.has_right_wall = True
         self.has_top_wall = True
         self.has_bottom_wall = True
+        self.visited = False
         self.mid_point = Point(int((x1 + x2) / 2), int((y1 + y2) / 2))
 
     def draw(self):
