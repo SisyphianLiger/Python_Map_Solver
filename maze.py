@@ -74,6 +74,7 @@ class Maze:
                     unvisited_places.append(cell)
             if self.checked_cells == self.matrix_size:
                 self._cells[i][j].draw()
+                self._animate()
                 return
             if unvisited_places:
                 self._path_stack.append((i, j))
@@ -128,3 +129,8 @@ class Maze:
     def run(self):
         self._break_entrance_and_exit()
         self._break_walls_r(0, 0)
+
+    def _reset_cells_visited(self):
+        for i in range(self.num_cols):
+            for j in range(self.num_rows):
+                self._cells[i][j].visited = False
