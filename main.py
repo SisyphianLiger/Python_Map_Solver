@@ -1,11 +1,11 @@
 from window import Window
 from maze import Maze
-import sys
+
 
 def main():
-    sys.setrecursionlimit(100000)
-    win = Window(2400, 1200)
-    Maze(100, 25, 100, 100, 10, 10, win)
+    win = Window(600, 600)
+    maze = Maze(50, 50, 20, 20, 25, 25, win)
+    maze.solve()
     win.wait_for_close()
 
 
